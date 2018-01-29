@@ -22,6 +22,15 @@ def test_and_score_endpoint(httpEndpoint):
     if httpEndpoint.get_tls_one_two_enbled() is not True:
         final_score_percentage = final_score_percentage - 5
     
+    if httpEndpoint.get_x_xss_protection_enabled() is not True:
+        final_score_percentage = final_score_percentage - 5
+    if httpEndpoint.get_csp_enabled() is not True:
+        final_score_percentage = final_score_percentage - 5
+    if httpEndpoint.get_x_frame_options_enabled() is not True:
+        final_score_percentage = final_score_percentage - 5
+    if httpEndpoint.get_hsts_enabled() is not True:
+        final_score_percentage = final_score_percentage - 5
+    
     httpEndpoint.set_final_score_percentage(final_score_percentage)
     
     return httpEndpoint
