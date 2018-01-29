@@ -20,8 +20,7 @@
 
 <!-- Custom styles for this template -->
 <link href="{% static 'css/hunter-main.css' %}" rel="stylesheet">
-<link href="{% static 'css/sticky-footer-navbar.css' %}"
-	rel="stylesheet">
+<link href="{% static 'css/sticky-footer-navbar.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -82,10 +81,13 @@
 				role="button">Process Endpoint</a>
 		</p>
 	</div>
+	<div id="processingDiv" class="alert alert-info" role="alert">
+		<strong>Processing Results</strong>
+	</div>
 
 	<div id="hunterResultsJumbotron" class="jumbotron">
 		<div id="overallRatingDiv">
-			<h1 class="display-4">Overall Rating</h1>
+			<h2 class="display-6">Overall Rating</h2>
 			<div id="overallRatingADiv">
 				<p class="lead">
 					<img src="{% static 'images/Rating_A.jpg' %}" class="img-fluid"
@@ -107,12 +109,18 @@
 			<hr class="my-4">
 		</div>
 		<div id="cipherResults">
-		
-		
+			<h2 class="display-6">SSL/TLS Settings</h2>
+			<div id="allTLSContent">
+			
+			</div>
 		</div>
-		
+			
+
 		<div>
-		
+			<h2 class="display-6">Security Header Settings</h2>
+			<div id="allSecurityHeaderSettings">
+			
+			</div>
 		</div>
 
 	</div>
@@ -129,16 +137,14 @@
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 		crossorigin="anonymous"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
-		integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
 		crossorigin="anonymous"></script>
+
 	<script src="{% static 'js/hunter_model.js' %}" />
 	<script src="{% static 'js/hunter_custom.js' %}" />
 </body>
