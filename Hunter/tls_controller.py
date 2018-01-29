@@ -183,7 +183,23 @@ def  test_endpoint_for_secure_headers(httpEndpoint):
     # https://hstspreload.appspot.com/:
     # "If you are serving an additional redirect from your HTTPS site, that redirect must still have the HSTS
     # header (rather than the page it redirects to)."
-
+    
+    if hsts_header is not None:
+        httpEndpoint.set_hsts_enabled(True)
+        if "includeSubDomains".lower() not in hsts_header.lower():
+            httpEndpoint.set_hsts_issues("includeSubDomains is not set.")
+        if "max-age".lower() not in hsts_header.lower():
+            issueValue = httpEndpoint.set_hsts_issues()
+            issueValue += "max-age is not set."
+            httpEndpoint.set_hsts_issues(issueValue)
+    if x_xss_protection_header is not None:
+        httpEndpoint.set_x_xss_protection_enabled(True)
+    if x_frame_options_header is not None:
+        httpEndpoint.set_x_frame_options_enabled(True)
+    if content_security_policy_header is not None:
+        httpEndpoint.set_csp_enabled(True)
+    
+    
     print(hsts_header)
     #print(x_frame_options_header)
     #print(x_xss_protection_header)

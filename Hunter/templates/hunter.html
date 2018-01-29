@@ -68,8 +68,7 @@
 		<h1 class="display-4">Hello, There!</h1>
 		<p class="lead">Welcome to Hunter.</p>
 		<hr class="my-4">
-		<p>It uses utility classes for typography and spacing to space
-			content out within the larger container.</p>
+		<p>Please use Hunter to audit your http endpoints before requesting for a pentest or releasing for production use.</p>
 
 		<div class="form-group">
 			<label for="httpEndPointInput">HTTP Endpoint:</label> <input
@@ -89,7 +88,7 @@
 			style="font-size: 24px"></i></strong>
 	</div>
 
-	<div id="hunterResultsJumbotron" class="jumbotron">
+	<div id="hunterResultsJumbotron" class="jumbotron" style="display: none;">
 		<div id="overallRatingDiv">
 			<h2 class="display-6">Overall Rating</h2>
 			<div id="overallRatingADiv">
@@ -112,7 +111,7 @@
 			</div>
 			<hr class="my-4">
 		</div>
-		<div id="cipherResults">
+		<div id="cipherResults" style="display: none;">
 			<h2 class="display-6">SSL/TLS Settings</h2>
 			<hr class="my-4">
 			<div id="allTLSContent"></div>
@@ -120,7 +119,7 @@
 		</div>
 
 
-		<div>
+		<div id="securityHeaderResults"  style="display: none;">
 			<h2 class="display-6">Security Header Settings</h2>
 			<hr class="my-4">
 			<div id="allSecurityHeaderSettings"></div>
@@ -154,4 +153,3 @@
 	<script src="{% static 'js/hunter_custom.js' %}"></script>
 </body>
 </html>
-
