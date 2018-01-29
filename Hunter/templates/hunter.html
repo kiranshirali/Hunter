@@ -19,6 +19,7 @@
 	crossorigin="anonymous">
 
 <!-- Custom styles for this template -->
+<link href="{% static 'css/hunter-main.css' %}" rel="stylesheet">
 <link href="{% static 'css/sticky-footer-navbar.css' %}"
 	rel="stylesheet">
 </head>
@@ -61,42 +62,74 @@
 
 	<!-- Begin page content -->
 	<main role="main" class="container">
-	<div class="mt-3">
-	</div>
+	<div class="mt-3"></div>
 	<div class="jumbotron">
 		<h1 class="display-4">Hello, There!</h1>
 		<p class="lead">Welcome to Hunter.</p>
 		<hr class="my-4">
 		<p>It uses utility classes for typography and spacing to space
 			content out within the larger container.</p>
-			
+
 		<div class="form-group">
-			<label for="exampleInputEmail1">Email address</label> <input
-				type="email" class="form-control" id="exampleInputEmail1"
-				aria-describedby="emailHelp" placeholder="Enter email"> <small
-				id="emailHelp" class="form-text text-muted">We'll never
-				share your email with anyone else.</small>
+			<label for="httpEndPointInput">HTTP Endpoint:</label> <input
+				type="email" class="form-control" id="httpEndPointInput"
+				aria-describedby="emailHelp" placeholder="Enter the http endpoint">
+			<small id="emailHelp" class="form-text text-muted">Please use
+				the format: www.example.com</small>
 		</div>
 		<p class="lead">
-			<a class="btn btn-primary btn-lg" href="#" role="button">Learn
-				more</a>
+			<a id="submitHttpEndPoint" class="btn btn-primary btn-lg" href="#"
+				role="button">Process Endpoint</a>
 		</p>
 	</div>
+
+	<div id="hunterResultsJumbotron" class="jumbotron">
+		<div id="overallRatingDiv">
+			<h1 class="display-4">Overall Rating</h1>
+			<div id="overallRatingADiv">
+				<p class="lead">
+					<img src="{% static 'images/Rating_A.jpg' %}" class="img-fluid"
+						alt="Responsive image">
+				</p>
+			</div>
+			<div id="overallRatingBDiv">
+				<p class="lead">
+					<img src="{% static 'images/Rating_B.jpg' %}" class="img-fluid"
+						alt="Responsive image">
+				</p>
+			</div>
+			<div id="overallRatingCDiv">
+				<p class="lead">
+					<img src="{% static 'images/Rating_C.jpg' %}" class="img-fluid"
+						alt="Responsive image">
+				</p>
+			</div>
+			<hr class="my-4">
+		</div>
+		<div id="cipherResults">
 		
+		
+		</div>
+		
+		<div>
+		
+		</div>
+
+	</div>
+
 	</main>
 
 	<footer class="footer">
 		<div class="container">
-			<span class="text-muted">Copyright &#169;
-				All Rights Reserved.</span>
+			<span class="text-muted">Copyright &#169; All Rights Reserved.</span>
 		</div>
 	</footer>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -106,6 +139,8 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
 		integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
 		crossorigin="anonymous"></script>
+	<script src="{% static 'js/hunter_model.js' %}" />
+	<script src="{% static 'js/hunter_custom.js' %}" />
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+
