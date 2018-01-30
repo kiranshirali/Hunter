@@ -23,7 +23,8 @@ var model = {
 					responseJsonObject = serverRespone;
 				},
 				error : function() {
-					alert('Error')
+					$('#processingDiv').hide();
+					$('#errorDiv').show();
 				}
 			});
 

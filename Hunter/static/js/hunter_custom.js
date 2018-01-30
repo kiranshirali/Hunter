@@ -5,13 +5,18 @@ $(document)
 				function() {
 					'use strict';
 
+					
 					$('#hunterResultsJumbotron').hide();
 					$('#processingDiv').hide();
+					$('#errorDiv').hide();
 
+					
 					$('#submitHttpEndPoint')
 							.click(
 									function() {
+										$('#errorDiv').hide();
 
+										
 										if ($('#httpEndPointInput').val() == ''
 												|| $('#httpEndPointInput')
 														.val() == undefined) {
