@@ -70,7 +70,7 @@ def test_endpoint_for_tls_settings(httpEndpoint):
     
     if len(scan_result.accepted_cipher_list) > 0:
         httpEndpoint.set_ssl_three_zero_enbled(True)
-        httpEndpoint.set_ssl_two_three_supported_cipher_list(accepted_cipher_suite_list)
+        httpEndpoint.set_ssl_three_zero_supported_cipher_list(accepted_cipher_suite_list)
     else:
         httpEndpoint.set_ssl_three_zero_enbled(False)
     #if scan_result.preferred_cipher is not None:
@@ -189,18 +189,22 @@ def  test_endpoint_for_secure_headers(httpEndpoint):
         if "includeSubDomains".lower() not in hsts_header.lower():
             httpEndpoint.set_hsts_issues("includeSubDomains is not set.")
         if "max-age".lower() not in hsts_header.lower():
-            issueValue = httpEndpoint.set_hsts_issues()
+            issueValue = httpEndpoint.get_hsts_issues()
             issueValue += "max-age is not set."
             httpEndpoint.set_hsts_issues(issueValue)
     if x_xss_protection_header is not None:
         httpEndpoint.set_x_xss_protection_enabled(True)
+        if "mode=block".lower() not in x_xss_protection_header.lower():
+            httpEndpoint.set_x_xss_protection_issues("mode=block is not set.")
     if x_frame_options_header is not None:
         httpEndpoint.set_x_frame_options_enabled(True)
+        if "SAMEORIGIN".lower() not in x_frame_options_header.lower():
+            httpEndpoint.set_x_frame_options_issues("SAMEORIGIN value is not set")
     if content_security_policy_header is not None:
         httpEndpoint.set_csp_enabled(True)
     
     
-    print(hsts_header)
+    #print(hsts_header)
     #print(x_frame_options_header)
     #print(x_xss_protection_header)
     print(content_security_policy_header)

@@ -54,6 +54,7 @@ $(document)
 
 											var htmlToBeAppended = '';
 											var cipherlist;
+											$('#allTLSContent').html('');
 											if (endpointResults.ssl_two_zero_enbled != null
 													&& endpointResults.ssl_two_zero_enbled == true) {
 
@@ -146,6 +147,8 @@ $(document)
 												$('#cipherResults').show();
 												htmlToBeAppended = '';
 											}
+											
+											$('#allSecurityHeaderSettings').html('');
 
 											if (endpointResults.csp_enabled != null
 													&& endpointResults.csp_enabled === true) {
@@ -154,7 +157,7 @@ $(document)
 
 												if (endpointResults.csp_issues != null
 														&& endpointResults.csp_issues.length > 0) {
-
+													htmlToBeAppended += '<p class="display-6 text-right">'+endpointResults.csp_issues+'</p>';
 												} else {
 													htmlToBeAppended += '<p class="display-6 text-right">No Issues Found</p>';
 												}
@@ -184,11 +187,21 @@ $(document)
 
 												if (endpointResults.x_xss_protection_issues != null
 														&& endpointResults.x_xss_protection_issues.length > 0) {
-
+													htmlToBeAppended += '<p class="display-6 text-right">'+endpointResults.x_xss_protection_issues+'</p>';
 												} else {
 													htmlToBeAppended += '<p class="display-6 text-right">No Issues Found</p>';
 												}
 
+												$('#allSecurityHeaderSettings')
+														.append(
+																htmlToBeAppended);
+												$('#securityHeaderResults')
+														.show();
+												htmlToBeAppended = '';
+											}
+											else{
+												htmlToBeAppended = '<h4 class="display-6">X-XSS-Protection Header is Not Enabled</h4>';
+												htmlToBeAppended += '<p class="display-6 text-right">Read more over <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection" target="_blank">here</a> </p>';
 												$('#allSecurityHeaderSettings')
 														.append(
 																htmlToBeAppended);
@@ -204,11 +217,21 @@ $(document)
 
 												if (endpointResults.hsts_issues != null
 														&& endpointResults.hsts_issues.length > 0) {
-
+													htmlToBeAppended += '<p class="display-6 text-right">'+endpointResults.hsts_issues+'</p>';
 												} else {
 													htmlToBeAppended += '<p class="display-6 text-right">No Issues Found</p>';
 												}
 
+												$('#allSecurityHeaderSettings')
+														.append(
+																htmlToBeAppended);
+												$('#securityHeaderResults')
+														.show();
+												htmlToBeAppended = '';
+											}
+											else{
+												htmlToBeAppended = '<h4 class="display-6">HSTS is Not Enabled</h4>';
+												htmlToBeAppended += '<p class="display-6 text-right">Read more over <a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security" target="_blank">here</a> </p>';
 												$('#allSecurityHeaderSettings')
 														.append(
 																htmlToBeAppended);
