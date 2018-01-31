@@ -32,7 +32,8 @@
 		<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
 			<span class="navbar-brand"> <img
 				style="max-width: 40px; max-heigth: 40px; margin-top: -5px;"
-				src="{% static 'images/Hunter.jpg' %}" /> <span>Hunter Beta v1.0</span>
+				src="{% static 'images/Hunter.jpg' %}" /> <span>Hunter Beta
+					v1.0</span>
 			</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -68,7 +69,8 @@
 		<h1 class="display-4">Hello, There!</h1>
 		<p class="lead">Welcome to Hunter.</p>
 		<hr class="my-4">
-		<p>Please use Hunter to audit your http endpoints before requesting for a pentest or releasing for production use.</p>
+		<p>Please use Hunter to audit your http endpoints before
+			requesting for a pentest or releasing for production use.</p>
 
 		<div class="form-group">
 			<label for="httpEndPointInput">HTTP Endpoint:</label> <input
@@ -82,19 +84,21 @@
 				role="button">Process Endpoint</a>
 		</p>
 	</div>
-	
-	<div id="errorDiv" class="alert alert-danger text-center"
-		role="alert" style="display: none;">
-		<strong>Oh boy !! Something just messed up. How about you refresh and try again?</strong>
+
+	<div id="errorDiv" class="alert alert-danger text-center" role="alert"
+		style="display: none;">
+		<strong>Oh boy !! Something just messed up. How about you
+			refresh and try again?</strong>
 	</div>
-	
+
 	<div id="processingDiv" class="alert alert-info text-center"
 		role="alert">
 		<strong>Processing Results <i class="fa fa-spinner fa-spin"
 			style="font-size: 24px"></i></strong>
 	</div>
 
-	<div id="hunterResultsJumbotron" class="jumbotron" style="display: none;">
+	<div id="hunterResultsJumbotron" class="jumbotron"
+		style="display: none;">
 		<div id="overallRatingDiv">
 			<h2 class="display-6 text-center">Overall Rating</h2>
 			<div id="overallRatingADiv">
@@ -118,15 +122,15 @@
 			<hr class="my-4">
 		</div>
 		<div id="cipherResults" style="display: none;">
-			<h2 class="display-6">SSL/TLS Settings</h2>
+			<h3 class="display-6 text-center">SSL/TLS Settings</h3>
 			<hr class="my-4">
 			<div id="allTLSContent"></div>
 			<hr class="my-4">
 		</div>
 
 
-		<div id="securityHeaderResults"  style="display: none;">
-			<h2 class="display-6">Security Header Settings</h2>
+		<div id="securityHeaderResults" style="display: none;">
+			<h3 class="display-6 text-center">Security Header Settings</h3>
 			<hr class="my-4">
 			<div id="allSecurityHeaderSettings"></div>
 			<hr class="my-4">

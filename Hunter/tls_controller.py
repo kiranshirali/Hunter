@@ -170,7 +170,7 @@ def  test_endpoint_for_secure_headers(httpEndpoint):
     else:
         hsts_header = http_resp.getheader('strict-transport-security', None)
         x_frame_options_header = http_resp.getheader('x-frame-options', None)
-        x_xss_protection_header  = http_resp.getheader('x-xss-protections', None)    
+        x_xss_protection_header  = http_resp.getheader('x-xss-protection', None)    
         content_security_policy_header = http_resp.getheader('Content-Security-Policy', None) 
         content_security_policy_report_only_header = http_resp.getheader('content-security-policy-report-only', None)       
         hpkp_header = http_resp.getheader('public-key-pins', None)
