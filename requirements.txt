@@ -1,0 +1,15 @@
+asn1crypto==0.24.0
+cffi==1.11.4
+cryptography==2.1.4
+Django==1.11.10
+djangorestframework==3.7.7
+enum34==1.1.6
+idna==2.6
+ipaddress==1.0.19
+nassl==1.0.3
+pycparser==2.18
+pytz==2018.3
+six==1.11.0
+SSLyze==1.3.4
+tls-parser==1.2.1
+typing==3.6.4
